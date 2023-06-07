@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #1e90ff;
+            background-color: #310062;
+            padding: 15px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            text-shadow: 2px 10px 20px #000000;
+        }
+
+        img {
+            width: 600px;
+            height: 600px;
+            display: block;
+            margin: 0 auto;
+            border: 5px solid #673c8e;
+        }
+
+        input[type=button]:hover {
+            background-color: #673c8e;
+        }
+
+        .bordered {
+            border: 5px solid #673c8e;
+            padding: 25px;
+            margin: 10px 0;
+        }
+
+
+    </style>
+    <title>Анкета</title>
+</head>
+<body>
+    <h1>Анкета</h1>
+    <img src="https://sun9-47.userapi.com/impg/IXeyyb0QAD4LvofEvSyXV3P1gmXqxuxZOI18qg/MjauN_G-RMo.jpg?size=2560x2560&quality=95&sign=6bfcba55738f6487694463452cac85ab&type=album">
+    <div id="name" class="bordered">Имя: <span id="firstName">Александр</span></div>
+    <div id="surname" class="bordered">Фамилия: <span id="lastName">Дубровский</span></div>
+    <div class="bordered">Возраст: <span id="age">21</span></div>
+    <input type="text" id="newFirstName" placeholder="Новое имя">
+    <input type="text" id="newLastName" placeholder="Новая фамилия">
+    <input type="button" value="Изменить имя" onclick="changeFirstName()">
+    <input type="button" value="Изменить фамилию" onclick="changeLastName()">
+    <input type="button" value="Изменить цвет фона" onclick="changeBgColor()">
+    
+
+    <script>
+        function changeFirstName() {
+            var newFirstName = document.getElementById('newFirstName').value;
+            if (newFirstName) {
+                document.getElementById('firstName').textContent = newFirstName;
+            }
+        }
+
+        function changeLastName() {
+            var newLastName = document.getElementById('newLastName').value;
+            if (newLastName) {
+                document.getElementById('lastName').textContent = newLastName;
+            }
+        }
+
+        function changeBgColor() {
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
